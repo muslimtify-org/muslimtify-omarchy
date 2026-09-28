@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/ca837af0-7132-4384-aba0-0535c539fbf0
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/muslimtify-org/omarchy-muslimtify --enable
+omarchy plugin add https://github.com/muslimtify-org/muslimtify-omarchy --enable
 ```
 
 ## Develop

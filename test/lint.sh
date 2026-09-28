@@ -36,3 +36,13 @@ while IFS= read -r ref; do
 done < <(grep -rhoE '\b(Style|Color|Border)\.[a-zA-Z]+(\.[a-zA-Z]+)?' --include=*.qml --exclude-dir=.git "$ROOT" | sort -u)
 [[ -z $unknown ]] || fail "every Style, Color and Border name exists in Omarchy" "unknown: $unknown"
 pass "every Style, Color and Border name exists in Omarchy"
+
+# Qt's default AutoText renders anything that looks like HTML, so a string
+# from muslimtify's output or config could load a remote image. Every Text
+# must be plain, with textFormat on the line right after `Text {`.
+rich=$(find "$ROOT" -name '*.qml' -not -path '*/.git/*' -exec awk '
+  FNR == 1 { prev = "" }
+  prev ~ /^[[:space:]]*Text \{[[:space:]]*$/ && $0 !~ /textFormat: Text\.PlainText/ { print FILENAME ":" FNR - 1 }
+  { prev = $0 }' {} +)
+[[ -z $rich ]] || fail "every Text renders plain text" "$rich"
+pass "every Text renders plain text"

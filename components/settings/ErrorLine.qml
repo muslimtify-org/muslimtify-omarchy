@@ -4,6 +4,7 @@ import qs.Commons
 // One line of error text. Hidden while empty.
 // qmllint disable missing-property
 Text {
+  textFormat: Text.PlainText
   id: root
 
   property string fontFamily: Style.font.family

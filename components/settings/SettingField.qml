@@ -39,6 +39,7 @@ Column {
   Component.onCompleted: input.text = root.value
 
   Text {
+    textFormat: Text.PlainText
     visible: root.label !== ""
     text: root.label
     color: root.foreground

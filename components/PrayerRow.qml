@@ -34,6 +34,7 @@ BorderSurface {
   radius: Style.cornerRadius
 
   Text {
+    textFormat: Text.PlainText
     id: nameText
     anchors.left: parent.left
     anchors.leftMargin: Style.spacing.md
@@ -47,6 +48,7 @@ BorderSurface {
   }
 
   Text {
+    textFormat: Text.PlainText
     anchors.left: nameText.right
     anchors.verticalCenter: parent.verticalCenter
     text: root.time

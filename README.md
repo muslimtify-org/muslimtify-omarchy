@@ -12,6 +12,25 @@ https://github.com/user-attachments/assets/ca837af0-7132-4384-aba0-0535c539fbf0
 omarchy plugin add https://github.com/muslimtify-org/muslimtify-omarchy --enable
 ```
 
+## Remove
+
+```bash
+omarchy plugin disable muslimtify-org.muslimtify
+omarchy plugin remove muslimtify-org.muslimtify
+```
+
+## Dependencies
+
+- [muslimtify](https://github.com/muslimtify-org/muslimtify) on your PATH. Tested with v0.4.2. Without it the bar shows only an icon and the popup says muslimtify was not found. The plugin does not install or manage the muslimtify daemon, which sends the notifications.
+- `timedatectl`, for the timezone list in settings. It ships with systemd, so Omarchy already has it.
+- `xdg-open`, for the GitHub and website links in the popup. Omarchy already has it.
+
+The tests also need `node`, `jq` and `qmllint`. The plugin does not use them at runtime.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
 ## Develop
 
 Link your checkout into the plugins directory, then restart the shell. Run omarchy-restart-shell again after each change, because a plugin rescan does not reload code behind a symlink.

@@ -38,6 +38,7 @@ BorderSurface {
       implicitHeight: timeText.implicitHeight
 
       Text {
+        textFormat: Text.PlainText
         id: timeText
         text: root.next ? root.next.time : ""
         color: root.foreground
@@ -47,6 +48,7 @@ BorderSurface {
       }
 
       Text {
+        textFormat: Text.PlainText
         anchors.right: parent.right
         anchors.baseline: timeText.baseline
         text: root.next ? "in " + Model.formatDuration(root.next.remaining) : ""

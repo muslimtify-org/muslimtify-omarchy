@@ -30,6 +30,7 @@ Item {
       ]
 
       Text {
+        textFormat: Text.PlainText
         id: link
 
         required property var modelData

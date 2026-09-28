@@ -27,6 +27,7 @@ Column {
     implicitHeight: detectButton.implicitHeight
 
     Text {
+      textFormat: Text.PlainText
       anchors.left: parent.left
       anchors.verticalCenter: parent.verticalCenter
       text: root.location.auto_detect ? "Auto-detected" : "Set manually"
@@ -76,6 +77,7 @@ Column {
   }
 
   Text {
+    textFormat: Text.PlainText
     width: parent.width
     text: "Changing coordinates clears the city and country and sets the timezone from them."
     color: root.dim

@@ -30,6 +30,7 @@ Column {
   }
 
   Text {
+    textFormat: Text.PlainText
     visible: root.service.missing
     width: parent.width
     text: "muslimtify not found. Install it from " + Model.LINKS.website

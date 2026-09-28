@@ -1,0 +1,63 @@
+{
+  "location": {
+    "latitude": 21.422500,
+    "longitude": 39.826200,
+    "timezone": "Asia/Riyadh",
+    "timezone_offset": 3.0,
+    "auto_detect": false,
+    "use_gps": false,
+    "updated_at": 0,
+    "refresh_interval": 43200,
+    "city": "Makkah",
+    "country": "SA"
+  },
+  "prayers": {
+    "fajr": {
+      "enabled": true,
+      "adhan": "",
+      "adhan_enabled": true,
+      "reminders": [30, 15, 5],
+      "offset": 0
+    },
+    "dhuhr": {
+      "enabled": true,
+      "adhan": "",
+      "adhan_enabled": true,
+      "reminders": [30, 15, 5],
+      "offset": 0
+    },
+    "asr": {
+      "enabled": true,
+      "adhan": "",
+      "adhan_enabled": true,
+      "reminders": [30, 15, 5],
+      "offset": 0
+    },
+    "maghrib": {
+      "enabled": true,
+      "adhan": "",
+      "adhan_enabled": true,
+      "reminders": [30, 15, 5],
+      "offset": 0
+    },
+    "isha": {
+      "enabled": true,
+      "adhan": "",
+      "adhan_enabled": true,
+      "reminders": [30, 15, 5],
+      "offset": 0
+    }
+  },
+  "notification": {
+    "timeout": 5000,
+    "urgency": "critical",
+    "sound": "adhan",
+    "sound_alarm": "alarm",
+    "sound_reminder": "reminder",
+    "icon": "muslimtify"
+  },
+  "calculation": {
+    "method": "makkah",
+    "madhab": "shafi"
+  }
+}

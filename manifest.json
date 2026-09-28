@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "muslimtify-org.muslimtify",
+  "name": "Muslimtify",
+  "version": "0.1.0",
+  "author": "rizukirr",
+  "description": "A daily prayer notification and reminder",
+  "kinds": [
+    "bar-widget"
+  ],
+  "license": "MIT",
+  "entryPoints": {
+    "barWidget": "Widget.qml"
+  },
+  "barWidget": {
+    "displayName": "Muslimtify",
+    "description": "A daily prayer notification and reminder",
+    "category": "Time",
+    "allowMultiple": false,
+    "defaultSection": "center",
+    "defaults": {
+      "interval": 30,
+      "soonMinutes": 15
+    },
+    "schema": [
+      {
+        "key": "interval",
+        "type": "number",
+        "label": "Refresh seconds"
+      },
+      {
+        "key": "soonMinutes",
+        "type": "number",
+        "label": "Highlight when this many minutes are left"
+      }
+    ]
+  }
+}

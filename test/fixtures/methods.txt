@@ -1,0 +1,25 @@
+Available calculation methods:
+
+  mwl              Muslim World League
+  makkah         * Umm al-Qura, Makkah
+  isna             ISNA
+  egypt            Egyptian General Authority
+  karachi          Univ. Islamic Sciences, Karachi
+  turkey           Diyanet, Turkey
+  singapore        MUIS, Singapore
+  jakim            JAKIM, Malaysia
+  kemenag          KEMENAG, Indonesia
+  france           UOIF, France
+  russia           Spiritual Admin., Russia
+  dubai            GAIAE, Dubai
+  qatar            Min. of Awqaf, Qatar
+  kuwait           Min. of Awqaf, Kuwait
+  jordan           Min. of Awqaf, Jordan
+  gulf             Gulf Region
+  tunisia          Min. of Religious Affairs, Tunisia
+  algeria          Min. of Religious Affairs, Algeria
+  morocco          Min. of Habous, Morocco
+  portugal         Comunidade Islamica de Lisboa
+  moonsighting     Moonsighting Committee
+
+* = current method

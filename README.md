@@ -4,6 +4,8 @@ An Omarchy shell bar widget for [muslimtify](https://github.com/muslimtify-org/m
 
 Needs [muslimtify](https://muslimtify.vercel.app) installed and on your PATH.
 
+https://github.com/user-attachments/assets/ca837af0-7132-4384-aba0-0535c539fbf0
+
 ## Install
 
 ```bash

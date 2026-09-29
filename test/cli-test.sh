@@ -54,6 +54,8 @@ check 'M.remindersArgs("asr", [20, 10])' '.prayers.asr.reminders == [20, 10]'
 check 'M.offsetArgs("asr", -5)' '.prayers.asr.offset == -5'
 check 'M.urgencyArgs("low")' '.notification.urgency == "low"'
 check 'M.soundArgs("off")' '.notification.sound == "off"'
+check 'M.timeFormatArgs("12")' '.display.time_format == 12'
+check 'M.timeFormatArgs("24")' '.display.time_format == 24'
 
 mapfile -d '' argv < <(args 'M.scheduleArgs(1)')
 m "${argv[@]}" | jq -e '.prayers.fajr.time' >/dev/null || fail "scheduleArgs(1) prints a schedule"

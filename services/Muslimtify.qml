@@ -107,6 +107,7 @@ Item {
   function setOffset(prayer, minutes) { root.run(prayer + ".offset", Model.offsetArgs(prayer, minutes)) }
   function setUrgency(level) { root.run("notification.urgency", Model.urgencyArgs(level)) }
   function setSound(mode) { root.run("notification.sound", Model.soundArgs(mode)) }
+  function setTimeFormat(format) { root.run("display.timeFormat", Model.timeFormatArgs(format)) }
 
   FileView {
     id: configFile

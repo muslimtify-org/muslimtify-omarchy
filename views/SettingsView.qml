@@ -54,6 +54,12 @@ FocusScope {
         width: parent.width
         spacing: Style.spacing.huge
 
+        TimeFormatSection {
+          width: parent.width
+          service: root.service
+          fontFamily: root.fontFamily
+        }
+
         LocationSection {
           width: parent.width
           service: root.service

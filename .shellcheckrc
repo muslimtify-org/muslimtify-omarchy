@@ -1,0 +1,4 @@
+# The test scripts source base-test.sh through a path built at runtime.
+# Resolve it from each script's own directory so shellcheck follows it.
+source-path=SCRIPTDIR
+external-sources=true

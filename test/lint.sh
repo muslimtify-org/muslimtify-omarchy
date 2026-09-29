@@ -18,8 +18,11 @@ mapfile -t files < <(find "$ROOT" -name '*.qml' -not -path '*/.git/*' | sort)
 "$qmllint" -I "$imports" --max-warnings 0 "${files[@]}" || fail "qmllint reports no warnings"
 pass "qmllint reports no warnings"
 
-omarchy plugin validate "$ROOT" >/dev/null || fail "omarchy plugin validate accepts the manifest"
-pass "omarchy plugin validate accepts the manifest"
+# Call the validator script directly, so CI can point OMARCHY_PATH at a clone
+# of Omarchy instead of needing it installed.
+validate="${OMARCHY_PATH:-/usr/share/omarchy}/bin/omarchy-plugin-validate"
+"$validate" "$ROOT" >/dev/null || fail "omarchy-plugin-validate accepts the manifest"
+pass "omarchy-plugin-validate accepts the manifest"
 
 # qmllint cannot see inside Omarchy's Style, Color and Border objects, so the
 # QML files turn off its missing-property check. This puts typo detection

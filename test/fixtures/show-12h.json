@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-29",
+  "prayers": {
+    "fajr": {
+      "time": "04:51 AM",
+      "offset": 0,
+      "enabled": true,
+      "reminders": [30, 15, 5]
+    },
+    "dhuhr": {
+      "time": "12:14 PM",
+      "offset": 0,
+      "enabled": true,
+      "reminders": [30, 15, 5]
+    },
+    "asr": {
+      "time": "03:38 PM",
+      "offset": 0,
+      "enabled": true,
+      "reminders": [30, 15, 5]
+    },
+    "maghrib": {
+      "time": "06:13 PM",
+      "offset": 0,
+      "enabled": true,
+      "reminders": [30, 15, 5]
+    },
+    "isha": {
+      "time": "07:27 PM",
+      "offset": 0,
+      "enabled": true,
+      "reminders": [30, 15, 5]
+    }
+  }
+}

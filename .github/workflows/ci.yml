@@ -1,0 +1,47 @@
+name: CI
+
+# Checks every change against Omarchy's plugin rules and runs the plugin's own
+# tests. It runs in an Arch container because Arch packages quickshell with its
+# QML type info, so qmllint resolves the Quickshell imports against real types.
+# Omarchy is cloned, not installed: the checks need only its shell/ directory
+# and bin/omarchy-plugin-validate.
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Omarchy checks & tests
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    env:
+      # A fixed path, because runner.temp can name the host path in a
+      # container job.
+      OMARCHY_PATH: /tmp/omarchy
+      OMARCHY_SHELL_DIR: /tmp/omarchy/shell
+    steps:
+      - name: Install tools
+        run: pacman -Syu --noconfirm --needed qt6-declarative quickshell jq nodejs git shellcheck
+
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Clone Omarchy
+        run: git clone --depth 1 --branch quattro https://github.com/basecamp/omarchy "$OMARCHY_PATH"
+
+      - name: Shellcheck
+        run: shellcheck test/*.sh
+
+      # Model tests, qmllint with --max-warnings 0, Omarchy's manifest
+      # validator, and the plugin's own checks. The muslimtify CLI test skips,
+      # since muslimtify is not installed here.
+      - name: Tests and lint
+        run: test/all.sh

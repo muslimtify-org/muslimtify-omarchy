@@ -30,6 +30,8 @@ assert(Array.isArray(config.prayers.fajr.reminders), 'parseConfig keeps reminder
 assertEqual(M.parseConfig('{'), null, 'parseConfig rejects invalid JSON')
 assertDeepEqual(M.parseConfig(''), M.defaultConfig(), 'parseConfig falls back to defaults for a missing file')
 assertEqual(M.parseConfig('{"location":{"city":7}}').location.city, '', 'parseConfig ignores a value of the wrong type')
+assertEqual(config.display.time_format, 24, 'parseConfig defaults the time format to 24 hour when display is missing')
+assertEqual(M.parseConfig('{"display":{"time_format":12}}').display.time_format, 12, 'parseConfig reads the time format')
 
 const methodsText = fixture('methods.txt')
 const methods = M.parseMethods(methodsText)
@@ -158,4 +160,6 @@ assertDeepEqual(M.remindersArgs('asr', [20, 10]), ['notification', '--reminder',
 assertDeepEqual(M.offsetArgs('asr', '-5'), ['offset', 'asr', '-5'], 'offsetArgs')
 assertDeepEqual(M.urgencyArgs('low'), ['notification', '--urgency', 'low'], 'urgencyArgs')
 assertDeepEqual(M.soundArgs('off'), ['notification', '--sound', 'off'], 'soundArgs')
+assertDeepEqual(M.timeFormatArgs('12'), ['timeformat', '12'], 'timeFormatArgs')
+assertDeepEqual(M.TIME_FORMATS.map(f => f.value), ['24', '12'], 'TIME_FORMATS lists 24 hour first')
 JS

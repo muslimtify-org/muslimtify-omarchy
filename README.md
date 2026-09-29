@@ -21,7 +21,7 @@ omarchy plugin remove muslimtify-org.muslimtify
 
 ## Dependencies
 
-- [muslimtify](https://github.com/muslimtify-org/muslimtify) on your PATH. Tested with v0.4.2. Without it the bar shows only an icon and the popup says muslimtify was not found. The plugin does not install or manage the muslimtify daemon, which sends the notifications.
+- [muslimtify](https://github.com/muslimtify-org/muslimtify) on your PATH. Tested with v0.4.3. The time format setting needs v0.4.3 or later. Without it the bar shows only an icon and the popup says muslimtify was not found. The plugin does not install or manage the muslimtify daemon, which sends the notifications.
 - `timedatectl`, for the timezone list in settings. It ships with systemd, so Omarchy already has it.
 - `xdg-open`, for the GitHub and website links in the popup. Omarchy already has it.
 
